@@ -6,20 +6,20 @@ require_once 'autoload.php';
 use Projeto\Banco\Modelo\Conta\{Titular, Conta, ContaPoupanca, ContaCorrente};
 use Projeto\Banco\Modelo\{Endereco, CPF, Funcionario};
 
-///////////////-----------CONTA 1
+//----TESTE CRIAÇÃO DE OBJETOS----
 $titular = new Titular(new CPF('12345678901'), 'Angel L', new Endereco('RS', 'PF','sm', 'sm','101'));
-$conta1 = new ContaPoupanca($titular);
-////////-------------CONTA2
-$titular2 = new Titular(new CPF('45678123465'), 'Guilherme C', new Endereco('RS', 'PF','sm', 'sm','101'));
-$conta2 = new ContaCorrente($titular2);
-//--------------------------------------CONTA 3
-$titular3 = new Titular(new CPF('78912343610'), 'Kita LC', new Endereco('RS', 'PF','sm', 'sm','101'));
-$conta3 = new ContaCorrente($titular3);
-//--------------------------------CONTA 4
-$titular4 = new Titular(new CPF('09889078965'), 'Dodi LC', new Endereco('RS', 'PF','sm', 'sm','101'));
-$conta4 = new ContaPoupanca($titular4);
+$conta1  = new ContaPoupanca($titular);
 
-//---------------------------transferencias:
+$titular2 = new Titular(new CPF('45678123465'), 'Guilherme C', new Endereco('RS', 'PF','sm', 'sm','101'));
+$conta2   = new ContaCorrente($titular2);
+
+$titular3 = new Titular(new CPF('78912343610'), 'Kita LC', new Endereco('RS', 'PF','sm', 'sm','101'));
+$conta3   = new ContaCorrente($titular3);
+
+$titular4 = new Titular(new CPF('09889078965'), 'Dodi LC', new Endereco('RS', 'PF','sm', 'sm','101'));
+$conta4   = new ContaPoupanca($titular4);
+
+//-----TRANSFERENCIAS - UTILIZAÇÃO DE MÉTODOS
 $conta1->Depositar(100.00);
 $conta2->Depositar(1000.000);
 $conta3->Depositar(100.00);
@@ -40,7 +40,6 @@ foreach ($contas as $conta){
 }
 
 echo "<div class='am'>Numero de contas criadas: |" . Conta::getNumContas() . "| <br></div>";
-
 
 ?>
 </html>
