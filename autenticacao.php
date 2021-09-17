@@ -7,8 +7,7 @@ use Projeto\Banco\Service\Autenticador;
 
 require_once 'autoload.php';
 
-$i = new Autenticador();
-$dir1 = new Diretor(new CPF('12332112332'),'joooo', 1000);
+$autenticador = new Autenticador();
+$diretor      = new Diretor(new CPF('12332112332'),'joooo', 1000);
 
-$i->tentaLogin($dir1, '123456');
-
+$autenticador->tentaLogin($diretor, '123456');
