@@ -1,20 +1,19 @@
 <?php
  require_once 'autoload.php';
 
-use Projeto\Banco\Service\ControladorBoni;
-use Projeto\Banco\Modelo\CPF;
-use Projeto\Banco\Modelo\Funcionario\{Funcionario, Gerente, Diretor, Dev};
-//$y = new Diretor(new CPF('76543287654'), 'Mirna LC', 900);
-$f = new Dev(new CPF('76543287654'), 'Leonardo KING', 1000);
-echo "Salário antes: {$f->getSalario()} <br>";
+ use Projeto\Banco\Service\ControladorBoni;
+ use Projeto\Banco\Modelo\CPF;
+ use Projeto\Banco\Modelo\Funcionario\{Funcionario, Gerente, Diretor, Dev};
 
-//AUMENTO
-$f->sobeNivel();
+ $f = new Dev(new CPF('76543287654'), 'Leonardo KING', 1000);
+ echo "Salário antes: {$f->getSalario()} <br>";
 
-//CONTROLADOR BONIFICACOES
-$controlador = new ControladorBoni();
-//$controlador->addBoni($y);
-$controlador->addBoni($f);
+ //AUMENTO
+ $f->sobeNivel();
 
-echo "Total de bonificação {$controlador->getTotalBoni()}<br>";
-echo "{$f->getNome()} - Salário depois do aumento: {$f->getSalario()}<br>";
+ //CONTROLADOR BONIFICACOES
+ $controlador = new ControladorBoni();
+ $controlador->addBoni($f);
+
+ echo "Total de bonificação {$controlador->getTotalBoni()}<br>";
+ echo "{$f->getNome()} - Salário depois do aumento: {$f->getSalario()}<br>";
