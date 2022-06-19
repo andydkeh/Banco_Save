@@ -17,7 +17,6 @@ class Endereco
         $this->num = $num;
     }
 
-
     public function getEstado(): string{
         return $this->estado;
     }
@@ -33,7 +32,7 @@ class Endereco
     public function getRua(): string{
         return $this->rua;
     }
-
+    
     public function getNum(): string{
         return $this->num;
     }
