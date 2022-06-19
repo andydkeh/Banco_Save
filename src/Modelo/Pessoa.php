@@ -12,7 +12,6 @@ class Pessoa
         $this->validaNome($nome);
     }
 
-
     function getNome(): string
     {
         return $this->nome;
@@ -23,8 +22,10 @@ class Pessoa
         return $this->cpf->getNumero();
     }
 
-    protected function validaNome($nome) {
-        if(strlen($nome) < 5){
+    protected function validaNome($nome)
+    {
+        if(strlen($nome) < 5)
+        {
             echo "Caracteres insuficientes para Titular";
             exit();
         }
