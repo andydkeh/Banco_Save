@@ -1,8 +1,5 @@
 <?php
-
-
 namespace Projeto\Banco\Modelo;
-
 
 interface Autenticavel
 {
